@@ -9,3 +9,17 @@ public class fourth {
 
     }
 }
+
+class Solution {
+    public int countSeniors(String[] details) {
+        for (i = 0; i < details.length; i++) {
+            int a = details[i][11];
+            int b = details[i][12];
+            int number = 0;
+            if (a >= 6 && b > 0) {
+                number++;
+            }
+        }
+        return number;
+    }
+}
