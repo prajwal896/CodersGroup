@@ -29,7 +29,7 @@ public class Bank {
         System.out.println("Updated Account Balance: " + b1.getbalance());
         b1.setbalance(900);
         System.out.println("Updated Account Balance: " + b1.getbalance());
-    }
+    } 
 } 
 
 
