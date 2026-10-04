@@ -219,3 +219,8 @@ public class Oops_workshhet {
     System.out.println(Employee.headcount);
     } 
 }
+/*
+Then answer this in writing: two employees exist. How many copies of the company name are in
+memory? How many copies of salaryPaise? Explain why.
+company name is only one j=its just beign shared for whole class and alary paise rki copy is two coz they belongto a particular object and since obj 2 hai tho salryprais is also twoogit 
+*/

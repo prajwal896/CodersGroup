@@ -1,18 +1,18 @@
 
-public class Opps {
+public class Opps1 {
     final String college = "indira";
     static int strength = 60;
         int rollno;
         String name;
         int marks;
 
-        public  Opps (int rollno, String name, int marks) {
+        public  Opps1 (int rollno, String name, int marks) {
             this.rollno = rollno;
             this.name = name;
             this.marks = marks;
             this.strength = strength+1;
         }
-        public Opps (int rollno, String name) {
+        public Opps1 (int rollno, String name) {
             this.rollno = rollno;
             this.name = name;
             this.marks = 0;
@@ -57,11 +57,11 @@ public class Opps {
         Opps praj = new Opps(45,"prajwall");
         System.out.println("strength="+ praj.strength + " roll no- " + praj.rollno + " name = " + praj.name + " marks = " + praj.marks);
     */
-    Opps s1= new Opps(6,"Suresh",85);
-    Opps s2= new Opps(7,"Ramesh",75);
-    Opps s3= new Opps(8,"Mahesh",65);
-    Opps s4= new Opps(9,"Rajesh",55);
-    Opps s5= new Opps(10,"Rohit",45);
+    Opps1 s1= new Opps1(6,"Suresh",85);
+    Opps1 s2= new Opps1(7,"Ramesh",75);
+    Opps1 s3= new Opps1(8,"Mahesh",65);
+    Opps1 s4= new Opps1(9,"Rajesh",55);
+    Opps1 s5= new Opps1(10,"Rohit",45);
     System.out.println("Grade for S3: " + s3.grade(65));
         }
 }
