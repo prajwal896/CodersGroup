@@ -9,3 +9,11 @@ def home():
 @app.get("/myinfo")
 def myinfo():
     return {"name": "Kay Bgtos", "age": 20, "location": "hinjewadi"}
+
+@app.get("/about")
+def about():
+    return {"message": "I am a software developer and I love coding."}
+
+@app.get("/about/{name}")
+def greet(name: str):
+    return {"message": f"im {name} and I am a software developer."}
