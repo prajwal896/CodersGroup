@@ -1,5 +1,6 @@
 from fastapi import FastAPI,HTTPException
 from data import menu
+from pydantic import BaseModel
 app= FastAPI()
 
 # //@app.get("/")
@@ -32,4 +33,31 @@ app= FastAPI()
 #         raise HTTPException(status_code=400, detail="ZERO SE DIVIDE KYU KRRA")
 #     return {"a": a, "b": b, "result": a / b}
 
-print(menu[0]["name"])
+#print(menu[0]["name"])
+@app.get("/menu")
+def get_menu():
+    return {"menu": menu}
+
+@app.get("/menu/{item_id}")
+def get_item(item_id: int):
+    for item in menu:
+        if item["id"] == item_id:
+            return {"name": item}
+    raise HTTPException(status_code=404, detail="Item not found")
+
+class NewItem(BaseModel):
+    name: str
+    price: float
+    veg: bool
+
+@app.post("/menu", status_code=201)
+def add_items(item: NewItem):
+    new_id= len(menu)+1
+    item = {
+        "id": new_id,
+        "name": item.name,
+        "price": item.price,
+        "veg": item.veg
+    }
+    menu.append(item)
+    return {"message": "Item added successfully", "item": item}
