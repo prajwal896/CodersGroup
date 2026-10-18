@@ -52,7 +52,10 @@ class NewItem(BaseModel):
 
 @app.post("/menu", status_code=201)
 def add_items(item: NewItem):
-    new_id= len(menu)+1
+    if len(menu) == 0:
+        new_id = 1
+    else:
+        new_id= menu[-1]["id"] + 1
     item = {
         "id": new_id,
         "name": item.name,
