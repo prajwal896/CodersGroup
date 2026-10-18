@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI,HTTPException
 
 app= FastAPI()
 
@@ -21,3 +21,13 @@ def greet(name: str):
 @app.get("/add/{num1}")
 def square(num1: int):
     return {"result": num1 ** num1}
+
+@app.get("/add")
+def add(a: int, b: int):
+    return {"a": a, "b": b, "sum": a + b}
+
+@app.get("/divide")
+def divide(a: float, b: float):
+    if(b == 0):
+        raise HTTPException(status_code=400, detail="ZERO SE DIVIDE KYU KRRA")
+    return {"a": a, "b": b, "result": a / b}
