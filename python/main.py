@@ -61,3 +61,11 @@ def add_items(item: NewItem):
     }
     menu.append(item)
     return {"message": "Item added successfully", "item": item}
+
+@app.delete("/delete/{item_id}")
+def delete(item_id: int):
+    for item in menu:
+        if item["id"] == item_id:
+            menu.remove(item)
+            return {"message": f"Item with ID {item_id} deleted successfully"}
+    raise HTTPException(status_code=404, detail="Item not found")

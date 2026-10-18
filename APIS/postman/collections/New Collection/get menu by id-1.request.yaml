@@ -3,4 +3,4 @@ name: get menu by id
 description: ""
 url: http://127.0.0.1:8000/add/2
 method: GET
-order: 6002
+order: 6000
