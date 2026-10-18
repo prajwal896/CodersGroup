@@ -1,5 +1,5 @@
 $kind: http-request
 description: ""
-url: ""
+url: http://127.0.0.1:8000/about/prajal
 method: GET
 order: 1000

@@ -17,3 +17,7 @@ def about():
 @app.get("/about/{name}")
 def greet(name: str):
     return {"message": f"im {name} and I am a software developer."}
+
+@app.get("/add/{num1}")
+def square(num1: int):
+    return {"result": num1 ** num1}
