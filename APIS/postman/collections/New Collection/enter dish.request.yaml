@@ -1,5 +1,13 @@
 $kind: http-request
 description: ""
-url: http://127.0.0.1:8000/add/2
-method: GET
-order: 8000
+url: http://127.0.0.1:8000/menu
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "name": "biryaanii",
+        "price": 10.99,
+        "veg": true
+    }
+order: 9000

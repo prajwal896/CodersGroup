@@ -1,5 +1,14 @@
 $kind: http-request
 description: ""
-url: http://127.0.0.1:8000/add/2
-method: GET
-order: 5000
+url: http://127.0.0.1:8000/update/2
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\": \"biryaa2nii\",\r
+
+    \    \"price\": 10.99,\r
+
+    \    \"veg\": true"
+order: 6000

@@ -77,7 +77,7 @@ def delete(item_id: int):
 def update(item_id: int, updated_item: NewItem):
     for item in menu:
         if item["id"] == item_id:
-            item["namme"] = updated_item.name
+            item["name"] = updated_item.name
             item["price"] = updated_item.price
             item["veg"] = updated_item.veg
             return {"message": f"Item with ID {item_id} updated successfully", "item": item}
@@ -92,4 +92,14 @@ def update_price(item_id: int, new_price: newPrice):
         if item["id"] == item_id:
             item["price"] = new_price.price
             return {"message": f"Price of item with ID {item_id} updated successfully", "item": item}
+    raise HTTPException(status_code=404, detail="Item not found")
+
+class newName(BaseModel):
+    name:str
+@app.put("/menu/{item_id}/name")
+def update_name(item_id: int, new_name: newName):
+    for item in menu:
+        if item["id"] == item_id:
+            item["name"] = new_name.name
+            return {"message": f"Name of item with ID {item_id} updated successfully", "item": item}
     raise HTTPException(status_code=404, detail="Item not found")

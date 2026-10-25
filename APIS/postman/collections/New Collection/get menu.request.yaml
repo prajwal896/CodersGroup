@@ -1,5 +1,5 @@
 $kind: http-request
 description: ""
-url: http://127.0.0.1:8000/add/2
+url: "{{URL}}/menu"
 method: GET
 order: 2000
